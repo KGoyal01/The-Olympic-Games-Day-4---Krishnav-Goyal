@@ -388,7 +388,11 @@ while running:
 
                     if operator == '÷':
                         ans = num1 / num2
-                    
+
+                if (ans + 1) % 2 == 0 or (ans % 2) == 0:
+                    ans = int(ans)
+                else:
+                    ans = round(ans,3)
                 print("Your answer is: ", ans)
                 keypresslst.append('=')
                 keypresslst.append(ans)
@@ -399,7 +403,7 @@ while running:
 
             screen = ''
             clearscreen()
-            pygame.display.update()
+
 
             for i in keypresslst:
                 screen = screen+str(i)
